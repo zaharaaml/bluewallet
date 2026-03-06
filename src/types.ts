@@ -6,6 +6,7 @@ export interface Expense {
   category: Category;
   description: string;
   date: string;
+  source?: 'manual' | 'email';
 }
 
 export const CATEGORIES: Category[] = [

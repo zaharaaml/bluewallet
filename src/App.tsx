@@ -113,7 +113,7 @@ export default function App() {
 
     const amount = Number(newExpense.amount);
     const expense: Expense = {
-      id: crypto.randomUUID(),
+      id: window.crypto?.randomUUID?.() || Math.random().toString(36).substring(2, 15),
       amount: amount,
       description: newExpense.description,
       category: newExpense.category as Category,
