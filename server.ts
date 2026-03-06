@@ -12,6 +12,7 @@ const SUPABASE_KEY = process.env.SUPABASE_KEY;
 app.use(express.json());
 
 async function supabaseFetch(endpoint, options = {}) {
+  console.log("masuk sini supabaseFetch");
   const res = await fetch(`${SUPABASE_URL}/rest/v1/${endpoint}`, {
     headers: {
       apikey: SUPABASE_KEY,
@@ -31,6 +32,7 @@ async function supabaseFetch(endpoint, options = {}) {
 // =======================
 
 app.get("/api/expenses", async (req, res) => {
+  console.log("masuk sini get");
   try {
     const expenses = await supabaseFetch(
       "expenses?select=*&order=date.desc"
